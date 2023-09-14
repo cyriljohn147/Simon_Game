@@ -14,6 +14,14 @@ $(document).keypress(function() {
   }
 });
 
+$(document).on("click",function(){
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+})
+
 $(".btn").click(function() {
 
   var userChosenColour = $(this).attr("id");
@@ -27,7 +35,7 @@ $(".btn").click(function() {
 
 function startOver()
 {
-  level=-1;
+  level=0;
   gamePattern=[];
   started=false;
   $("#level-title").text("Press A Key to Start");
